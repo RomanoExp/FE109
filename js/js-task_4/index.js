@@ -32,14 +32,20 @@ for (i = 0; i < arrP.length; i++) {
 //while. Выведите оба массива. С помощью цикла for найдите сумму элементов этого
 //массива. Запишите ее в переменную result и выведите.
 
-let arrQ = [];
+let arrQ = [],
+    result = 0,
+    k = 0;
 
 for (i = 23; i <= 57; i++) {
     arrQ.push(i);
+    for (; k < i; k++) {
+
+    }
+    result += k;
 }
 
 console.log(arrQ);
-
+console.log(`Сумма элементов массива ${result}`)
 
 
 
@@ -47,14 +53,13 @@ arrQ = [],
     i = 23;
 
 while (i <= 57) {
-    
-arrQ.push(i);
+
+    arrQ.push(i);
     i++;
-    console.log(arrQ);
-    
+
 }
 
-
+console.log(arrQ);
 
 
 
@@ -180,19 +185,12 @@ let arr5 = [5, 9, 21, , , 9, 78, , , , 6],
 for (i = 0; i < arr5.length; i++) {
     if ((arr5[i]) !== undefined) {
         continue;
-
-    } else {
-
-        sumN += i;
     }
-
-
-    console.log(`Пустых элементов ${i}`);
-
-
+    sumN += 1;
+    console.log(`Пустые индексы массива ${i}`);
 }
 console.log(arr5);
-console.log(`Пустых элементов ${sumN}`);
+console.log(`Пустых элементов всего ${sumN}`);
 
 
 
@@ -202,8 +200,23 @@ console.log(`Пустых элементов ${sumN}`);
 //более 2х нулей. Пример массива: [48,9,0,4,21,2,1,0,8,84,76,8,4,13,2] или
 //[1,8,0,13,76,8,7,0,22,0,2,3,2].
 //
-
-
+//
+//let arrTest = [1, 8, 0, 13, 76, 8, 7, 0, 22, 0, 2, 3, 2],
+//    val = 0,
+//    sumTest = 0;
+//
+//console.log(arrTest);
+//
+//for (i = 0; i < arrTest.length; i++) {
+//    val = arrTest[i];
+//    if (val > 0) {
+//
+//    }
+//
+//}
+//
+//console.log(arrTest);
+//
 
 
 
