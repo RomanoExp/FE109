@@ -118,7 +118,7 @@ function CheckLog (login){
     
     
     
-   return (login.replace(/(@)/, '$1')); 
+   return (login.replace(/^$/, '$1')); 
     }
 
 console.log(CheckLog('test123456@mail.ru'));
