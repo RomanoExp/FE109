@@ -129,8 +129,6 @@ let PushArr = function (arr6) {
 console.log(PushArr([1, 8, 12, 15, 105, 77, 90, -12, 5, -14, 22, 38]));
 
 
-
-
 console.log('           ↓↓ ---7---  ↓↓');
 
 
