@@ -159,8 +159,6 @@ console.log(pyramid(7));
 
 
 
-
-
 console.log('------------------------');
 
 //
