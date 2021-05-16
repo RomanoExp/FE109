@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> romano
  <<<<<<< romano
 
  
@@ -135,4 +138,9 @@ let str1 = 'индо земля зашаталась под ногами-и вы
     text;
 console.log(text = str6 + ' ' + str8 + ' ' + str3 + ' ' + str1 + ' ' + str5 + ' ' + str7 + ' ' + str4 + ' ' + str2);
 >>>>>>> raman
+<<<<<<< HEAD
 >>>>>>> be4544df9ac35b51c7c159ba573f5982243420af
+=======
+=======
+>>>>>>> 38f70ee6781ee2a6a3477808bdfe0a61e1ab34c1
+>>>>>>> romano
