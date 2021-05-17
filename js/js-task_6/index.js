@@ -173,8 +173,8 @@ console.log('------------10------------');
 //
 
 
-let mail = 'malpa123@kor.com'; //true
-let mail1 = 'malpa123@kor.com'; //false
+let mail = 'malpa123@kor.com'; 
+let mail1 = 'malpa123@kor.com'; 
 regexp = /^[\w]{2}[\w-\.]@[a-z]{2,11}.[a-z]{2,11}$/gi;
 
 
