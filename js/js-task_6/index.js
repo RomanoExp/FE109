@@ -39,9 +39,9 @@ console.log('------------3------------');
 let str3 = 'Я учу javascript!';
 
 console.log(str3);
-console.log(str3.substr(2, 3)); //substr(откуда отрезать, сколько )
-console.log(str3.substring(2, 5)); //substring(откуда отрезать, до)
-console.log(str3.slice(2, 5)); //slice(откуда отрезать, до)
+console.log(str3.substr(2, 3), str3.substr(6)); //substr(откуда отрезать, сколько )
+console.log(str3.substring(2, 5), str3.substring(6)); //substring(откуда отрезать, до)
+console.log(str3.slice(2, 5), str3.slice(6)); //slice(откуда отрезать, до)
 
 
 
@@ -92,7 +92,7 @@ function getZero(num) {
     }
 }
 
-console.log(date6.getHours() + ':' + date6.getMinutes() + ':' + date6.getSeconds() + ' ' + getZero(date6.getDate()) + '.' + getZero(date6.getMonth()) + '.' + date6.getFullYear());
+console.log(getZero(date6.getHours()) + ':' + getZero(date6.getMinutes()) + ':' + getZero(date6.getSeconds()) + ' ' + getZero(date6.getDate()) + '.' + getZero(date6.getMonth()) + '.' + date6.getFullYear());
 
 
 
@@ -101,10 +101,10 @@ console.log('------------7------------');
 //найдет строки aba, abba, abbba по шаблону: буква 'a', буква 'b' любое
 //количество раз, буква 'a'.
 //
-  
 
 
-console.log('aa aba abba abbba abca abea'.replace(/ab+a/, '!'));
+
+console.log('aa aba abba abbba abca abea'.match(/ab{1,}a/gi));
 
 console.log('------------8------------');
 //8. Дана почта пользователя test@mail.ru (можно использовать любую)
@@ -112,16 +112,12 @@ console.log('------------8------------');
 //слово до знака @
 //
 
-let mailStr;
+let str8 = "test1@mail.ru";
 
-function CheckLog (login){
-    
-    
-    
-   return (login.replace(/^$/, '$1')); 
-    }
-
-console.log(CheckLog('test123456@mail.ru'));
+function login(email) {
+    return email.substring(0, email.indexOf("@"))
+}
+console.log("Логин: " + login(str8));
 
 
 
@@ -144,15 +140,15 @@ console.log(regexp.test(phone));
 console.log(regexp.test(phone1));
 
 
-function CheckPhone(phoneNum){
+function CheckPhone(phoneNum) {
 
-    if(regexp.test(phoneNum)){
-     return true;   
+    if (regexp.test(phoneNum)) {
+        return true;
     }
     return false;
 }
 
-console.log(CheckPhone('375 (44) 123-45-67'));
+console.log(CheckPhone(phone));
 
 
 
@@ -172,30 +168,30 @@ console.log('------------10------------');
 //    выражения.
 //
 
+let mail = 'm1_.-@kor.com'; //true
+let mail1 = '123malpa(+*@kor.com'; //false
+regexp = /^[\w]{1,}[\w\d\-\.\_]{1,}@[\w]{2,11}\.[\w]{2,11}$/gi;
 
-let mail = 'malpa123@kor.com'; 
-let mail1 = 'malpa123@kor.com'; 
-regexp = /^[\w]{2}[\w-\.]@[a-z]{2,11}.[a-z]{2,11}$/gi;
 
-
-console.log(regexp.test(mail));
-console.log(regexp.test(mail));
 console.log(regexp.test(mail));
 console.log(regexp.test(mail));
 console.log(regexp.test(mail1));
+console.log(regexp.test(mail1));
 
+console.log('-----------');
 
-function CheckMail(email){
+function CheckMail(email) {
 
-    if(regexp.test(email)){
-     return true;   
+    if (regexp.test(email)) {
+        return true;
     }
     return false;
 }
 
-console.log(CheckMail('ads@kor.com'));
-console.log(CheckMail('ads@kor.com'));
-console.log(CheckMail('ads@kor.com'));
+console.log(CheckMail(mail));
+console.log(CheckMail(mail));
+console.log(CheckMail(mail1));
+console.log(CheckMail(mail1));
 
 
 console.log('------------11------------');
@@ -225,6 +221,37 @@ console.log('------------11------------');
 //    
 //    [kata](https://www.codewars.com/kata/5f5802bf4c2cc4001a6f859e/train/javascript)
 //    
+
+
+let arrGrid = [
+         ['m', 'y', 'e'],
+         ['x', 'a', 'm'],
+         ['p', 'l', 'e']
+     ];
+let newArr = arrGrid.flat();
+let result = [];
+
+let arrMap = (abc) => {
+
+    for (i = 0; i < newArr.length; i++) {
+        for (let a of abc) {
+            if (a == [i]) {
+                result.push(newArr[i - 1]);
+
+            }
+        }
+
+    }
+    return result;
+
+}
+
+console.log(newArr);
+console.log(arrMap([1, 3, 5, 8]));
+
+
+
+console.log('------------12------------');
 //12. Здесь вам в аргументах даны 2 массива: 
 //    
 //    Нужно преобразовать каждый массив удалив в нем повторяющиеся числа.
@@ -243,7 +270,37 @@ console.log('------------11------------');
 //для вывода всплывающего окна; console.log() для вывода в консоль браузера;
 //document.write() для вывода в «тело» HTML-документа.
 //
+
+function compareNumbers(a, b) {
+    return a - b;
+}
+
 //
+//function testit(a, b) {
+//    let c = a.concat(b),
+//
+//        newArr12 = [];
+//
+//    console.log(c);
+//
+//    for (i = 0; i < c.length; i++) {
+//        for (k = 0; k < c.length; k++) {
+//            if (c[i] !== c[k]) {
+//                newArr12.push(c[i]);
+//            }
+//            continue;
+//        }
+//        newArr12.push(c[i]);
+//
+//    }
+//    console.log(newArr12.sort(compareNumbers));
+//}
+//
+//
+//
+//testit([1, 25, 8, 3, 4, 44, ], [144, 1]);
+
+console.log('------------13------------');
 //13. (задание сложности hard)
 //    Напишите ф-цию, которая должна проверить правильность ввода адреса
 //    эл. почты, неиспользуя регулярные выражения. 
