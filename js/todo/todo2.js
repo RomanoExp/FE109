@@ -65,23 +65,26 @@ ul.addEventListener('click', function (ev) {
     }
 }, false);
 
-
+let ulList = document.querySelectorAll('li');
+console.log(ulList);
 // выделаяет, вешая класс checked на весь список li
 checkAll.addEventListener('click', function (event) {
-    ul.forEach(list => {
-        if (list.className !== 'checked') {
-            list.target.classList.add('checked');
+    
+
+    ulList.forEach(li => {
+        if (li.className !== 'checked') {
+            li.target.classList.add('checked');
 
         } else {
-            list.target.classList.toggle('checked');
+            li.target.classList.toggle('checked');
         }
     })
 
 }, false);
 
 
-console.log(ul);
-console.log(ul.length);
+console.log(ulList);
+console.log(ulList.length);
 
 
 
