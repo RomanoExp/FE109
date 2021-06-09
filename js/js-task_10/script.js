@@ -15,7 +15,6 @@
 
 // toggleClass(‘element’, ‘className’) для переключения класса в элементе;
 
-// addClass(‘element’, ‘className’) для добавления класса к элементу;
 
 // hasClass(‘element’, ‘className’) для проверки существования класса в элементе
 //(должен вернуть true или false);
@@ -25,3 +24,65 @@
 
 // on(‘element’, ‘eventName’, ‘funcName’) для добавления к элементу события и
 //выполнения функции (проверьте доступность контекста this и event).
+
+
+let DomMethods = function () {
+
+    this.create = function () {
+        var element = document.createElement(tagName, [options]);
+
+    };
+
+    this.attr = function () {
+        var attr = element.attributes;
+
+    };
+
+    this.html = function () {
+        var content = element.innerHTML;
+
+    };
+
+    this.search = function () {
+        var search = document.querySelector(selectors);
+
+    };
+
+    this.removeClass = function () {
+        var removeClasses = elem.classList.remove("example", "for", "understand", "he");
+
+    };
+
+    this.toggleClass = function () {
+        var toggleClasses = elem.classList.toggle("you");
+
+    };
+
+    this.addClass = function () {
+
+        var addClass = elem.classList.add("ok", "understand");
+    };
+
+    this.hasClass = function () {
+
+        var hasClass = elem.classList.contains("example");
+    };
+
+    this.append = function () {
+родитель.append(элемент или строка)
+        parent.append(p);
+
+    };
+
+    this.on = function () {
+
+
+    };
+
+};
+
+
+
+
+let method = new DomMethods();
+console.log(method);

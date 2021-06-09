@@ -43,19 +43,15 @@ console.log(kitchen);
 
 
 
-/*
-let Calculate = function (name) {
+
+let CalculateFunc = function (name) {
     this.name = name;
+    Lightbulb.apply(this); //Функционально
 
 };
 
-Calculate.prototype = kitchen;     //Прототипно
+let calculatePrice = new CalculateFunc();
 
-
-
-
-
-let calculatePrice = new Calculate();
 
 calculatePrice.get = function () {
     calculatePrice.name = prompt('Название вашей железяки');
@@ -94,53 +90,25 @@ calculatePrice.get();
 console.log(calculatePrice);
 
 
-*/
-
-
-
-//----------------------------------------------------------------------------------------------------
 
 
 
 
-let Calculate = function (name) {
-    this.name = name;
-    Lightbulb.apply(this);     //Функционально
 
-};
+
+
+
+//------------------------------------------------------------------------------------------------
+
+
+
+let Calculate = function (name) {};
+
+Calculate.prototype = calculatePrice; //Прототипно
+
 
 let calculatePrice1 = new Calculate();
 
-calculatePrice1.get = function () {
-    calculatePrice1.name = prompt('Название вашей железяки');
-    this.power = +prompt('Мощность устройства Вт');
-    this.costEnergy = +prompt('Стоимость электричества, кВт/ч');
-    this.workTime = +prompt('Время работы для рассчета');
-    if (confirm('Включить устройство?')) {
-        this.work = 1;
-    } else {
-        this.work = 0;
-    }
-    this.operation();
-};
-
-calculatePrice1.repeat = function () {
-    if (confirm('Добавим устройство?')) {
-        calculatePrice1.get();
-    } else return;
-
-};
-
-
-calculatePrice1.showMe = function () {
-    if (this.workTime == 0 || this.workTime == undefined || this.work == 0) {
-        console.log('Устройство ' + this.name + ' не включено');
-        return calculatePrice1.result = 0;
-    } else {
-        console.log('Устройство ' + this.name + ' время работы - ' + this.workTime + 'ч,' + ' стоимость = ' + Math.round(calculatePrice1.result) + 'р.');
-    }
-    calculatePrice1.repeat();
-};
-
 
 calculatePrice1.get();
+console.log(calculatePrice1);
